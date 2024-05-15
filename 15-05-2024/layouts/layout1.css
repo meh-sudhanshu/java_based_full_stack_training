@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-ctn{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.child1{
+    width: 50vw;
+    height: 100vh;
+    background-color: red;
+}
+.child2{
+    width: 50vw;
+    height: 100vh;
+    background-color: green;
+}

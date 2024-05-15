@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-ctn{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.div1, .div2, .div3, .div4{
+    height: 100%;
+    width: 25%;
+}
+.div1{
+    display: flex;
+    flex-direction: column;
+}
+.div1child1, .div1child2{
+    width: 100%;
+    height: 50%;
+}
+.div1child1{
+    background-color: brown;
+}
+.div1child2{
+    background-color: red;
+}
+
+
+.div2{
+    background-color: yellow;
+}
+.div3{
+    background-color: green;
+}
+.div4{
+    background-color: brown;
+}

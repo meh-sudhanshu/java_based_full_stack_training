@@ -1,0 +1,33 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.main-ctn{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #EADBC8;
+    display: flex;
+    flex-direction:row;
+    justify-content:flex-end;
+    align-items:flex-end;
+}
+
+div{
+    width: 50px;
+    height: 50px;
+}
+
+.div1{
+    background-color: red;
+}
+.div2{
+    background-color: yellow;
+}
+.div3{
+    background-color: black;
+}
