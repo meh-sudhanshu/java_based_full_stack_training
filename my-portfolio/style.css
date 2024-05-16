@@ -231,6 +231,7 @@
     background-position: center;
     background-size: cover;
     position: relative;
+    overflow: hidden;
 }
 .rpc-bottom img{
     width: 100%;
@@ -239,9 +240,11 @@
 .bottom-image{
     transition: .4s ease transform;
 }
-
+.bottom-image::after{
+    
+}
 .rpc-bottom:hover .bottom-image{
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 
 /* 
