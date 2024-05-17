@@ -2,8 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
 .main-ctn{
@@ -184,6 +184,7 @@
 
 /* ------------------------------------------start of recent projects----------------------- */
 .recent-projects{
+    padding-bottom: 20px;
     width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -233,16 +234,26 @@
     position: relative;
     overflow: hidden;
 }
-.rpc-bottom img{
+/* .rpc-bottom img{
     width: 100%;
     height: 100%;
-}
+} */
 .bottom-image{
+    width: 100%;
+    height: 100%;
+    position: relative;
     transition: .4s ease transform;
 }
-.bottom-image::after{
-    
-}
+/* .bottom-image::after{
+   content: "";
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   background-color: black;
+   left: 0;
+   top: 0;
+   z-index: 1;
+} */
 .rpc-bottom:hover .bottom-image{
     transform: scale(1.1);
 }
@@ -276,3 +287,140 @@
     font-family: monospace;
 }
 /* ------------------------------------------end of recent projects----------------------- */
+
+
+/* ----------------start of about me ------------------------- */
+
+.about-me{
+    margin-top: 100px;
+    width: 100vw;
+    height: 200vh;
+    position: relative;
+    background-image: url('./about_me.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-me::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.about-me-cotent-ctn{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding-top: 100px;
+}
+
+.abtme-heading{
+    font-size: 40px;
+    color: white;
+}
+.abtme-sub-heading{
+    font-size: 20px;
+    color: white;
+}
+.abtme-para{
+    font-size: 15px;
+    color: white;
+}
+.download-btn{
+    margin-top: 30px;
+    width: 300px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #5ACB8E;
+    color: #5ACB8E;
+}
+
+.download-btn:hover{
+    background-color: #5ACB8E;
+    color: red;
+}
+
+
+.image-ctn{
+    width: 300px;
+    height: 400px;
+    margin-top: 100px;
+}
+
+.image-content-ctn{
+    width: 300px;
+    height: 350px;
+    position: relative;
+}
+.image-content-ctn img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.image-content-ctn::after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    border: 10px solid #5CDB94;
+    z-index: -1;
+    top: 20px;
+    right: 20px;
+}
+
+
+
+
+/* .image-ctn img::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    border: 10 solid #5CDB94;
+} */
+
+/* ----------------end of about me ------------------------- */
+
+
+/* ------------------------------------start of footer--------------------------- */
+
+
+.footer{
+    width: 100vw;
+    height: 40vh;
+    background-color:#414d5a;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-image-ctn img{
+    width: 60px;
+    height: 60px;
+    filter: grayscale(1);
+    transition: .2s ease filter;
+}
+
+.footer-image-ctn img:hover{
+    filter: grayscale(0);
+}
+
+
+
+
+
+/* ------------------------------------end of footer--------------------------- */
