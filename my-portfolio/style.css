@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    overflow-x: hidden;
 }
 
 .main-ctn{
@@ -295,6 +294,7 @@
     margin-top: 100px;
     width: 100vw;
     height: 200vh;
+    padding-bottom: 200px;
     position: relative;
     background-image: url('./about_me.jpg');
     background-position: center;
@@ -396,8 +396,7 @@
 
 /* ------------------------------------start of footer--------------------------- */
 
-
-.footer{
+ .footer{
     width: 100vw;
     height: 40vh;
     background-color:#414d5a;
@@ -417,7 +416,7 @@
 
 .footer-image-ctn img:hover{
     filter: grayscale(0);
-}
+} 
 
 
 
