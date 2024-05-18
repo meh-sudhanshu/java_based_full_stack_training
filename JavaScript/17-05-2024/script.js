@@ -50,9 +50,9 @@ var closeButton = document.getElementsByClassName("close-btn")[0]
 var increaseButton = allButtons[0]
 var decreaseButton = allButtons[1]
 
-console.log(numberHeading)
-console.log(increaseButton)
-console.log(decreaseButton)
+// console.log(numberHeading)
+// console.log(increaseButton)
+// console.log(decreaseButton)
 
 function increaseHandler(){
     var currentValue = numberHeading.innerText

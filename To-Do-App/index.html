@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="main-ctn">
+        <div class="overlay hidden">
+            <form class="item-form">
+                <img src="close_icon.png" alt="" class="close-icon" id="close-icon">
+                <input type="text" class="item-title ip" placeholder="Enter Item Title">
+                <input type="text" class="item-desc ip" placeholder="Enter Item Description">
+                <input type="date" class="item-start-date ip">
+                <input type="date" class="item-due-date ip">
+                <div class="form-btn-ctn">
+                    <button class="submit-btn btn" type="submit">Submit</button>
+                    <button class="reset-btn btn" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div class="btn-ctn">
+            <button class="add-item-btn btn">Add An Item</button>
+        </div>
+        <div class="item-ctn">
+            <div class="item">
+                <h1 class="title">Full Stack Web Development</h1>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing 
+                    elit. Vel dolorum perspiciatis accusantium sed aliquam, 
+                    rem quas, explicabo illum architecto officia minus temporibus 
+                    quos totam facere. Quam voluptatum aliquid et optio.
+                </p>
+                <div class="date-ctn">
+                    <h2 class="start-date date">14/05/2024</h2>
+                    <h2 class="end-date date">25/05/2024</h2>
+                </div>
+                <div class="utility-btn-ctn">
+                    <button class="discard-btn btn">Discard</button>
+                    <button class="complete-btn btn">Mark As Complete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
