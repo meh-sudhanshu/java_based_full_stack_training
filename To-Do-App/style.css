@@ -35,9 +35,12 @@
 
 .btn-ctn{
     width: 100%;
-    height: 10vh;
+    height: 20vh;
     padding: 30px;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .btn{
@@ -50,11 +53,34 @@
     cursor: pointer;
 }
 
+.discarded-btn{
+    background-color: transparent;
+    border: 2px solid #D20062;
+    color: black;
+}
+
+.completed-btn{
+    background-color: transparent;
+    border: 2px solid #2C7865;
+    color: black;
+}
+
+.active-btn{
+    background-color: transparent;
+    border: 2px solid #FF9800;
+    color: #1e1e1e;
+}
+
+.active{
+    background-color: #78A083;
+    color: white;
+    border: none;
+}
 
 
 .item-ctn{
     width: 100%;
-    min-height: 90vh;
+    height: 90vh;
     padding: 30px ;
     display: flex;
     flex-wrap: wrap;
@@ -123,7 +149,7 @@
 
 .item-form{
     width: 500px;
-    height: 550px;
+    height: 600px;
     background-color: #006769;
     display: flex;
     flex-direction: column;
@@ -150,10 +176,12 @@
 
 .form-btn-ctn{
     width: 100%;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    overflow-y: hidden;
 }
 
 .hidden{

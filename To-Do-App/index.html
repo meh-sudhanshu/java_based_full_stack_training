@@ -14,7 +14,7 @@
             <form class="item-form">
                 <img src="close_icon.png" alt="" class="close-icon" id="close-icon">
                 <input type="text" class="item-title ip" placeholder="Enter Item Title">
-                <input type="text" class="item-desc ip" placeholder="Enter Item Description">
+                <textarea rows="25" cols="56" class="item-desc" placeholder="Enter Item Description" style="padding: 10px;"></textarea>
                 <input type="date" class="item-start-date ip">
                 <input type="date" class="item-due-date ip">
                 <div class="form-btn-ctn">
@@ -25,24 +25,31 @@
         </div>
         <div class="btn-ctn">
             <button class="add-item-btn btn">Add An Item</button>
+            <div>
+                <button class="active-btn btn active">Active Items</button>
+                <button class="discarded-btn btn">Discarded Items</button>
+                <button class="completed-btn btn">Completed Items</button>
+            </div>
         </div>
         <div class="item-ctn">
-            <div class="item">
-                <h1 class="title">Full Stack Web Development</h1>
-                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing 
+            <div class="1 item">
+                <h1 class="title">Default Item</h1>
+                <p class="desc">
+                    Default items will be an ative item by default,Lorem ipsum dolor sit amet consectetur adipisicing 
                     elit. Vel dolorum perspiciatis accusantium sed aliquam, 
                     rem quas, explicabo illum architecto officia minus temporibus 
                     quos totam facere. Quam voluptatum aliquid et optio.
                 </p>
                 <div class="date-ctn">
                     <h2 class="start-date date">14/05/2024</h2>
-                    <h2 class="end-date date">25/05/2024</h2>
+                    <h2 class="end-date date">25/05/9999</h2>
                 </div>
                 <div class="utility-btn-ctn">
-                    <button class="discard-btn btn">Discard</button>
-                    <button class="complete-btn btn">Mark As Complete</button>
+                    <button class="1 discard-btn btn " style="cursor: not-allowed;">Discard</button>
+                    <button class="complete-btn btn" style="cursor:not-allowed;">Mark As Complete</button>
                 </div>
             </div>
+            
         </div>
     </div>
 </body>
