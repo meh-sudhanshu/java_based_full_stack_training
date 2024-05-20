@@ -1,0 +1,6 @@
+Html ---> audio, video, dl, section, animation
+
+CSS --> grid, child selectors, keyframe, media query, sticky
+
+
+JS --> methods on array--> splice,shift,unshift,some,reduce,concat
