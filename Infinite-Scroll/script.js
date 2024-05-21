@@ -8,7 +8,7 @@ function createInfiniteScrollBehaviour(){
     const fetchContent = async ()=>{
         const baseUrl = "https://api.unsplash.com/"
         const aceessKey = "3Jz7H9j1p6N_kj3zeCiHtNvaanjah2GL-MwqdvqnbZo"
-        const api = baseUrl+"photos/random/"+"?client_id="+aceessKey
+        const api = baseUrl+"photos/random/"+"?client_id="+aceessKey+"?count=10"
         const res = await fetch(api)
         const data = res.json()
         return data

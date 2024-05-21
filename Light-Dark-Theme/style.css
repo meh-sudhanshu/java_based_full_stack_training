@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background-color:#1E1E1E;
+    --text-color:#EFF2FF;
+}
+
+:root.light{
+    --background-color:#EFF2FF;
+    --text-color:#1E1E1E;
+}
+
+.main-ctn{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    /* color: var(--primary-text-color); */
+    font-family: sans-serif;
+    font-size: 50px;
+}
+
+.toggle-btn{
+    width: 180px;
+    height:40px;
+    position: fixed;
+    top: 10px;
+    right:10px;
+    cursor: pointer;
+}

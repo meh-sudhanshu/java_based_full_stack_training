@@ -124,3 +124,4 @@ closeBtn.addEventListener("click",closeFormHandler)
 addBtn.addEventListener("click",openFormHandler)
 itemForm.addEventListener("submit",formSubmitHandler)
 discardButton.addEventListener("click",discardHandler)
+
