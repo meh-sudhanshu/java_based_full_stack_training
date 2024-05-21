@@ -28,6 +28,14 @@ function discardHandler(event){
     console.log(event.target.classList[0])
 }
 
+function appendAllActiveItems(){
+    for(item of activeItemsArray){
+        itemCtn.appendChild(item)
+    }
+}
+
+
+
 function formSubmitHandler(event){
     event.preventDefault()
     overlay.classList.add("hidden")
@@ -93,7 +101,10 @@ function formSubmitHandler(event){
 
     activeItemsArray.push(item)
     console.log(activeItemsArray)
-    itemCtn.appendChild(item)
+   
+    activeItemsArray.push(item)
+
+    appendAllActiveItems()
 
 
     itemCount+=1
