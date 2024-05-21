@@ -32,7 +32,9 @@ function getValue(){
           },
     }
     const res = fetch(api,apiRequestData)
+
     res.then(res => res.json()).then(data=>{
+        console.log(data)
         const condition = data.current.condition.text
         const icon = data.current.condition.icon
         const city = data.location.name
@@ -78,3 +80,8 @@ function getValue(){
 
 
 searchBtn.addEventListener("click",getValue)
+
+
+
+
+// infinite-scroll, light-dark-theme (css varibales, switching colors, toggle event)
