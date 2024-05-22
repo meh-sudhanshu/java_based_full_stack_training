@@ -7,11 +7,18 @@
 :root{
     --background-color:#1E1E1E;
     --text-color:#EFF2FF;
+
+    --btn-background-color:#6f8c1f;
+    --btn-text-color:#fff
 }
 
 :root.light{
     --background-color:#EFF2FF;
     --text-color:#1E1E1E;
+
+    --btn-background-color:#cc0012;
+    --btn-text-color:#fff
+
 }
 
 .main-ctn{
@@ -36,5 +43,7 @@
     position: fixed;
     top: 10px;
     right:10px;
+    background-color: var(--btn-background-color);
+    color: var(--btn-text-color);
     cursor: pointer;
 }
