@@ -18,6 +18,12 @@ public class User {
     @Size(min = 5, max= 20, message = "name length can not be outside of 5 to 20 character range")
     private String name;
 
+    @NotNull
+    @NotBlank
+    @Column(unique = true)
+    private String email;
+
+
     @NotBlank
     @NotNull
     @Size(min=4,max = 30, message = "username length should be between 4 to 30 character")
@@ -36,7 +42,7 @@ public class User {
     private String dob;
 
     @NotNull
-    private boolean status;
+    private boolean isActive;
 
 
     @NotNull
@@ -84,12 +90,12 @@ public class User {
         this.dob = dob;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isActive() {
+        return isActive;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public String getAddress() {
@@ -98,5 +104,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

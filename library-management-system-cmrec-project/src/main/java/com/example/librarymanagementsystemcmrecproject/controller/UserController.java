@@ -20,6 +20,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin
 public class UserController {
 
     @Autowired
@@ -28,18 +29,19 @@ public class UserController {
 
     @PostMapping("/create-user")
     public ResponseEntity<?> createUser(@Valid @RequestBody User user, BindingResult result){
-
+        HashMap<String,String> responseMap = new HashMap<>();
         if(result.hasErrors()){
-            HashMap<String,String> errorMap = new HashMap<>();
+            responseMap.put("message","failed");
             for(FieldError error : result.getFieldErrors()){
                     String fieldName = error.getField();
                     String defaultMessage = error.getDefaultMessage();
-                    errorMap.put(fieldName,defaultMessage);
+                    responseMap.put(fieldName,defaultMessage);
             }
-            return new ResponseEntity<>(errorMap, HttpStatusCode.valueOf(200));
+            return new ResponseEntity<>(responseMap, HttpStatusCode.valueOf(200));
         }
         userRepository.save(user);
-        return new ResponseEntity<>("User Saved Successfully", HttpStatusCode.valueOf(200));
+        responseMap.put("message","User Saves Successfully!!");
+        return new ResponseEntity<>(responseMap, HttpStatusCode.valueOf(200));
     }
 
 
