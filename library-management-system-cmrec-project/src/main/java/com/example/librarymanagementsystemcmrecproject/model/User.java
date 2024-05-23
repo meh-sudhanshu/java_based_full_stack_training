@@ -1,23 +1,46 @@
 package com.example.librarymanagementsystemcmrecproject.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+
+
+import java.util.Date;
 
 @Entity
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
+    @NotBlank
+    @Size(min = 5, max= 20, message = "name length can not be outside of 5 to 20 character range")
     private String name;
+
+    @NotBlank
+    @NotNull
+    @Size(min=4,max = 30, message = "username length should be between 4 to 30 character")
+    @Column(unique = true)
     private String username;
+
+    @NotBlank
+    @NotNull
+    @Pattern(regexp ="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" ,
+            message = "At least one upper case,At least one lower case,At least one digit,At least one special character,Minimum eight in length ")
     private String password;
+
+
+    @NotNull
+    @NotBlank
     private String dob;
+
+    @NotNull
     private boolean status;
+
+
+    @NotNull
+    @NotBlank
     private String address;
 
 

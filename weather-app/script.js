@@ -85,3 +85,8 @@ searchBtn.addEventListener("click",getValue)
 
 
 // infinite-scroll, light-dark-theme (css varibales, switching colors, toggle event)
+
+
+
+
+
