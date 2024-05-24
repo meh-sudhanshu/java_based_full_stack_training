@@ -1,31 +1,18 @@
 
 
-const allInputFields = document.getElementsByClassName("ip")
-const infoIcon = document.getElementsByClassName("info_icon")[0]
-console.log(allInputFields)
 
-const fullName = allInputFields[0]
-const email = allInputFields[1]
-const username = allInputFields[2]
-const password = allInputFields[3]
-const dob = allInputFields[4]
-const address = allInputFields[5]
-const submitBtn = allInputFields[6]
+const usernameField = document.getElementById("username")
+const userPasswordField = document.getElementById("password")
+const loginButton = document.getElementById("login-btn")
+
+console.log(userPasswordField,usernameField,loginButton)
 
 
-
-function submitHandler(event){
-    event.preventDefault()
-    const data = {
-        name:fullName.value,
-        email:email.value,
-        username:username.value,
-        password:password.value,
-        dob:dob.value,
-        address:address.value,
+const loginHandler = ()=>{
+    const requestData = {
+        username:usernameField.value,
+        password:userPasswordField.value
     }
-
-    console.log(data,"data")
 
     const requestBody = {
         method:"POST",
@@ -33,29 +20,23 @@ function submitHandler(event){
             "Content-Type": "application/json",
             "Access-Control-Allow-Header":"*"
           },
-        body:JSON.stringify(data)
+        body:JSON.stringify(requestData)
     }
-    console.log(requestBody,"request body")
-    const registerApi = "http://localhost:8080/user/create-user"
+    const loginApi = "http://localhost:8080/user/login"
 
-    const promiseObject = fetch(registerApi,requestBody)
+    const promiseObject = fetch(loginApi,requestBody)
 
-   promiseObject.then(res=>res.json()).then(data=>{
-        if(data.message === "failed"){
-            const nameField = document.getElementsByClassName("input_field")[0]
-            nameField.classList.add("error")
+    promiseObject.then(res=>res.json()).then(data=>{
+        if(data.isAccepted === "true"){
+            localStorage.setItem("isLoggedIn",true)
+            localStorage.setItem("email",data.email)
+            window.location.replace("dashboard.html")
         }
-   })
+    })
 
-}
-
-
-function iconMousHoverHandler(){
-    const messageHeading = document.getElementsByClassName("message")[0]
-    messageHeading.classList.remove("hidden")
+    console.log(requestData)
 }
 
 
 
-infoIcon.addEventListener("mouseenter",iconMousHoverHandler)
-submitBtn.addEventListener("click",submitHandler)
+loginButton.addEventListener("click",loginHandler)
