@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+.main-ctn{
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar-content-ctn{
+    width: 100%;
+    height: 8vh;
+    background-color: #323754;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.left{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.left a{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #FFF;
+    font-size: 20px;
+}
+
+
+.app_icon{
+    width: 20px;
+    height: 20px;
+}
+
+
+.right{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.right button{
+    width: 80px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.navbar{
+    position: relative;
+}
+.hamburger{
+    width: 30px;
+    height:30px;
+    padding-top: 10px;
+    margin-left: 25px;
+    cursor: pointer;
+    display: none;
+} 
+
+
+/* .line1{
+    transform: rotateX(145deg);
+}
+
+.line2{
+    display: none;
+}  */
+
+@media only screen and (max-width:800px) {
+    .hamburger{
+        display: flex;
+    }
+    .navbar{
+        width: 100vw;
+        height: 8vh;
+        background-color:#323754;
+    }
+    .navbar-content-ctn{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 30vw;
+        height: 100%;
+        background-color: #323754;
+        height: 100vh;
+        padding-left: 20px;
+        padding-top: 20px;
+        position: absolute;
+        z-index: 11;
+        top: 8vh;
+        left: -30vw;
+        transition: .4s ease;
+    }
+    .left{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .left a{
+        color: #FFF;
+    }
+    .right{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
