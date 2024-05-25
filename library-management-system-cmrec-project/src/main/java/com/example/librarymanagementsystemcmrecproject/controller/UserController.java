@@ -2,6 +2,7 @@ package com.example.librarymanagementsystemcmrecproject.controller;
 
 import com.example.librarymanagementsystemcmrecproject.model.User;
 import com.example.librarymanagementsystemcmrecproject.repository.UserRepository;
+import com.example.librarymanagementsystemcmrecproject.service.UserService;
 import com.example.librarymanagementsystemcmrecproject.util.Email;
 import com.example.librarymanagementsystemcmrecproject.util.Login;
 import jakarta.validation.Valid;
@@ -28,34 +29,25 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserService userService;
+
 
     @PostMapping("/create-user")
     public ResponseEntity<?> createUser(@Valid @RequestBody User user, BindingResult result){
-        HashMap<String,String> responseMap = new HashMap<>();
-        if(result.hasErrors()){
-            responseMap.put("message","failed");
-            for(FieldError error : result.getFieldErrors()){
-                    String fieldName = error.getField();
-                    String defaultMessage = error.getDefaultMessage();
-                    responseMap.put(fieldName,defaultMessage);
-            }
-            return new ResponseEntity<>(responseMap, HttpStatusCode.valueOf(200));
-        }
-        userRepository.save(user);
-        responseMap.put("message","success");
-        return new ResponseEntity<>(responseMap, HttpStatusCode.valueOf(200));
+       return userService.createUserService(user,result);
     }
 
 
     @GetMapping("/get-all-users")
     public List<User> getAllUsers(){
-        return (List<User>) userRepository.findAll();
+        return userService.getAllUsersService();
     }
 
 
     @GetMapping("/get-user-by-id/{userId}")
-    public Optional<User> getUserById(@PathVariable  Long userId){
-        return userRepository.findById(userId);
+    public ResponseEntity<?> getUserById(@PathVariable  Long userId){
+        return userService.getUserById(userId);
     }
 
 
@@ -77,40 +69,14 @@ public class UserController {
 
     @PostMapping("/get-user-by-email")
     public ResponseEntity<?> getUserByEmail(@RequestBody Email emailObject){
-        var optionalUserObject = userRepository.findByEmail(emailObject.getEmail());
-        if(optionalUserObject.isPresent()) {
-            var user = optionalUserObject.get();
-            return new ResponseEntity<>(user, HttpStatusCode.valueOf(200));
-        }
-        return  new ResponseEntity<>("email id does not exists",HttpStatusCode.valueOf(200));
+        return userService.getUserByEmail(emailObject);
     }
 
 
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody Login loginObject){
-        String username = loginObject.getUsername();
-        String userPassword = loginObject.getPassword();
-        HashMap<String,String> responseMap = new HashMap<>();
-        var optionalUserObject = userRepository.findByUsername(username);
-        if(optionalUserObject.isPresent()){
-            var userObject = optionalUserObject.get();
-            String dbPassword = userObject.getPassword();
-            if(userPassword.equals(dbPassword)){
-                responseMap.put("isAccepted","true");
-                responseMap.put("email",userObject.getEmail());
-                return new ResponseEntity<>(responseMap,HttpStatusCode.valueOf(200));
-            }else{
-                responseMap.put("isAccepted","false");
-                responseMap.put("message","Invalid Password");
-                return new ResponseEntity<>(responseMap,HttpStatusCode.valueOf(200));
-            }
-        }else{
-            responseMap.put("isAccepted","false");
-            responseMap.put("message","Invalid Username");
-            return new ResponseEntity<>(responseMap,HttpStatusCode.valueOf(200));
-        }
-
+        return userService.loginUser(loginObject);
     }
 
 
